@@ -2,10 +2,10 @@
   "name": "nonbiri-network",
   "version": "1.0.0",
   "description": "Nonbiri Network, a NoSQL Network API using Mongoose DB.",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "author": "Kanabaki",
   "license": "ISC",
