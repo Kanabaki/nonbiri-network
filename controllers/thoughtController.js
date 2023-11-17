@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { Thought } = require('../models');
 
 module.exports =  {
 // Here is where you define your routes for Thoughts
