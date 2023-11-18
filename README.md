@@ -54,3 +54,4 @@ GitHub: https://github.com/Kanabaki
 Email: kagomekanabaki@gmail.com
 
 ## Notes
+Carlin Shaw: troubleshooting routes, createThought route
