@@ -1,7 +1,10 @@
 const router = require('express').Router();
-// TO DO: const { importThoughtRoutesFromController } = require('../../controllers/thoughtController');
+const { createThought } = require('../../controllers/thoughtController');
 
 // api/thoughts
+
+
+
 // TO DO: POST route here to create new Thought
 
 
