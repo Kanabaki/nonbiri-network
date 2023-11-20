@@ -5,37 +5,26 @@
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
 
 ## Description 
-Nonbiri Network is a NoSQL Network API using Mongoose DB.
-
-What was your motivation for the project?
-Why did you build this project?
-What problem does it solve?
-What did you learn?
+Nonbiri Network is a NoSQL Network API using Mongoose DB. Motivation for the project came from the desire to understand how social networks handle HTTP requests. Nonbiri Network was created to learn a NoSQL database and to get more familiar with unstructured data. If you wanted to give users the ability to interact with other users and share thoughts and reactions you can do so with this app. Things learned from the project include making more dynamic routing for CRUD operations, as well as creating schemas and models, to create the blueprints for our Mongoose collections. Mongoose subdocuments were also learned to organize our database.
 
 
 ## Installation
-Make sure you have the node modules in your local machine using the line **npm install** .
+Make sure you have the node modules in your local machine using the line **npm install**. Also make sure to have a local connection to MongooseDB.
 
 ## Usage
 Usage Image:
 
-![img alt txt](img path)
+![Nonbiri Network Insomnia Request Img](./assets/NonbiriNet_Demo.png)
 
-Now that you have installed your node modules you can run the line **node index.js** to start the app and start making requests.
+Run the line **node index.js**  or **npm start** to start the app and start making requests. Refer to the demo video for more information on how to make different requests in Insomnia.
 
 Link to Demo Video: 
-
-
-## Credits
-
-
 
 ## License
 License: MIT
@@ -54,4 +43,4 @@ GitHub: https://github.com/Kanabaki
 Email: kagomekanabaki@gmail.com
 
 ## Notes
-Carlin Shaw: troubleshooting routes, createThought route
+Troubleshooting of the userController and userRoutes, and the creation of the createThought and delete thought routes, were developed under Carlin Shaw.
