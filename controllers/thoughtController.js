@@ -30,15 +30,18 @@ async getOneThought(req, res) {
 // to the associated user's thoughts array field)
 async createThought(req, res) {  
       try {
-        const thoughts = await Thought.create(req.body);
+        const thought = await Thought.create(req.body);
         const user = await User.findOneAndUpdate(
-            { _id: req.params.userId },
+            { _id: req.body.userId },
 // addToSet doesn't add the new item if it already contains it, but push
 // adds the given item wether it exists or not
             {$push:{thoughts: thought._id}},
             {new: true}
             );
-        res.json(thoughts,user);
+            if (!user) {
+              return res.status(404).json({ message: 'No User with that ID' });
+            }
+        res.json(thought);
       } catch (err) {
         res.status(500).json(err);
       }
@@ -84,6 +87,44 @@ async deleteThought(req, res) {
     }
 
     res.json({ message: 'Thought Deleted!' })
+  } catch (err) {
+    res.status(500).json(err);
+  }
+},
+// REACTION ROUTES ============================================================
+// How to create a reaction
+// I need to grab a thought Id to assign a Reaction to that thought
+// I need to ass that thoughtId to the array of Thought[reactionSchema]
+async createReaction(req, res) {
+
+  try {
+    const thought = await Thought.findOneAndUpdate(
+      { _id: req.params.thoughtId },
+      {$addToSet:{reactions: req.body }},
+      {new: true}
+      );
+      if (!thought) {
+        return res.status(404).json({ message: 'No Thought with that ID' });
+      }
+    res.json(thought);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+},
+// {
+//   "reactionBody": "I agree!",
+//   "username": "JohnDoe"
+// }
+
+async deleteReaction(req, res) {
+
+  try {
+    const reaction = await Thought.findOneAndUpdate(
+      { _id: req.params.thoughtId },
+      {$pull:{reactions: { reactionId: req.params.reactionId }}},
+      {new: true}
+      );
+    res.json(reaction);
   } catch (err) {
     res.status(500).json(err);
   }

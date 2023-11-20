@@ -90,6 +90,11 @@ async addFriend(req, res) {
       res.status(500).json(err);
     }
   },
+  // {
+  //   "username": "lernantino",
+  //   "email": "lernantino@gmail.com"
+  // }
+
 
   async deleteFriend(req, res) {
 
