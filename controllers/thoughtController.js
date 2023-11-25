@@ -100,7 +100,7 @@ async deleteThought(req, res) {
 async createReaction(req, res) {
 
   try {
-    console.log(req.params.thoughtId)
+
     const thought = await Thought.findOneAndUpdate(
   
       { _id: req.params.thoughtId },
