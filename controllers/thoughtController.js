@@ -78,6 +78,8 @@ async updateThought(req, res) {
 // }
 
 // DELETE route to remove thought by id
+// TO DO: when I delete a thought, it is removed but the
+// reference id remains in the user arr
 async deleteThought(req, res) {
   try {
     const thought = await Thought.findOneAndDelete({ _id: req.params.thoughtId });
@@ -94,11 +96,13 @@ async deleteThought(req, res) {
 // REACTION ROUTES ============================================================
 // How to create a reaction
 // I need to grab a thought Id to assign a Reaction to that thought
-// I need to ass that thoughtId to the array of Thought[reactionSchema]
+// I need to add that thoughtId to the array of Thought[reactionSchema]
 async createReaction(req, res) {
 
   try {
+    console.log(req.params.thoughtId)
     const thought = await Thought.findOneAndUpdate(
+  
       { _id: req.params.thoughtId },
       {$addToSet:{reactions: req.body }},
       {new: true}
@@ -111,6 +115,7 @@ async createReaction(req, res) {
     res.status(500).json(err);
   }
 },
+
 // {
 //   "reactionBody": "I agree!",
 //   "username": "JohnDoe"

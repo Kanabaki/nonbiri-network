@@ -15,7 +15,15 @@ async getUsers(req, res) {
 async getOneUser(req, res) {
     try {
       const user = await User.findOne({ _id: req.params.userId })
-        .select('-__v').populate("friends").populate("thoughts");
+        .select('-__v')
+        .populate({
+          path: 'friends',
+          select: '-__v'
+        })
+        .populate({
+          path: 'thought',
+          select: '-__v'
+        });
 
       if (!user) {
         return res.status(404).json({ message: 'No User found with that ID' });
@@ -60,6 +68,13 @@ async updateUser(req, res) {
       res.status(500).json(err);
     }
   },
+// a PUT will be the same as the POST as far as the input fields, but the input values
+// can be changed
+// {
+//     "username": "lernantino",
+//     "email": "lernantino@gmail.com"
+//   }
+
 
 // DELETE route to remove user by id
 async deleteUser(req, res) {
