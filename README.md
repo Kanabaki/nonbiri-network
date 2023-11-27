@@ -24,7 +24,7 @@ Usage Image:
 
 Run the line **node index.js**  or **npm start** to start the app and start making requests. Refer to the demo video for more information on how to make different requests in Insomnia.
 
-Link to Demo Video: https://drive.google.com/file/d/1hMMidJFW9py4K1Clx4zBA9mMpj8Y2i1q/view?usp=drive_link
+Link to Demo Video: https://drive.google.com/file/d/1lFY_DpXan6zIT6fjo7m2vCdjFKPtKwGX/view?usp=sharing
 
 ## License
 License: MIT
