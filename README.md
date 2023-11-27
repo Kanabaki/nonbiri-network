@@ -24,7 +24,7 @@ Usage Image:
 
 Run the line **node index.js**  or **npm start** to start the app and start making requests. Refer to the demo video for more information on how to make different requests in Insomnia.
 
-Link to Demo Video: 
+Link to Demo Video: https://drive.google.com/file/d/1hMMidJFW9py4K1Clx4zBA9mMpj8Y2i1q/view?usp=drive_link
 
 ## License
 License: MIT
@@ -43,4 +43,4 @@ GitHub: https://github.com/Kanabaki
 Email: kagomekanabaki@gmail.com
 
 ## Notes
-Troubleshooting of the userController and userRoutes, and the creation of the createThought and delete thought routes, were developed under Carlin Shaw.
+Troubleshooting of the userController and userRoutes, and the creation of the createThought and delete thought routes, were developed under Carlin Shaw. Post and Delete Reaction routes were fixed under Learning Assistant Drew in thoughtRoutes.js.
